@@ -1,0 +1,8 @@
+[
+    {
+        "model": "horde",
+        "api_key": "<your Azure Horde API key here>",
+        "base_url": "http://localhost:5678/v1",
+        "api_version": "2023-07-01-preview"
+    }
+]
