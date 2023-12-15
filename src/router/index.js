@@ -19,6 +19,11 @@ const router = createRouter({
       name: 'femme',
       component: () => import('@/views/FemmeView.vue')
     },
+       {
+    path: '/chatbox',
+    name: 'femchatboxme',
+    component: () => import('@/components/ChatBox.vue')
+  },
     {
       path: '/about',
       name: 'about',

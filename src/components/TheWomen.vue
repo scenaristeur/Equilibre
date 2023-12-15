@@ -17,7 +17,7 @@ import CommunityIcon from './icons/IconCommunity.vue'
     Elle peut satisfaire les besoins de désir et de passion, offrant une connexion charnelle qui est importante pour de nombreuses personnes.
     <!-- <a href="https://vuejs.org/" target="_blank" rel="noopener">Discuter avec une femme attirante / Voir les photos de femmes attirantes.</a> -->
     <nav>
-      <RouterLink to="/femme-attirante">Discuter avec une femme attirante.</RouterLink>
+      <RouterLink to="/chatbox">Discuter avec une femme attirante.</RouterLink>
     </nav>
 
 
