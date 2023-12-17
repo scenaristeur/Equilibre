@@ -35,6 +35,9 @@ export default {
     return {
       currentMessage: '',
       messages: [],
+     // server_url: 'http://localhost:5678/v1/chat/completions',
+      //server_url: 'https://api.openai.com/v1/chat/completions',
+      server_url: 'http://localhost:3000/chatbot'
     };
   },
   created() {
@@ -47,7 +50,7 @@ export default {
         content: message,
       });
       await axios
-        .post('http://localhost:3000/chatbot', {
+        .post(this.server_url, {
           messages: this.messages
         })
         .then((response) => {
