@@ -1,11 +1,4 @@
-<script setup>
-import WelcomeItem from './WelcomeItem.vue'
-import DocumentationIcon from './icons/IconDocumentation.vue'
-import ToolingIcon from './icons/IconTooling.vue'
-import EcosystemIcon from './icons/IconEcosystem.vue'
-import CommunityIcon from './icons/IconCommunity.vue'
-// import SupportIcon from './icons/IconSupport.vue'
-</script>
+
 
 <template>
   <WelcomeItem>
@@ -16,9 +9,11 @@ import CommunityIcon from './icons/IconCommunity.vue'
     Cette femme représente la dimension physique et sexuelle de la vie. 
     Elle peut satisfaire les besoins de désir et de passion, offrant une connexion charnelle qui est importante pour de nombreuses personnes.
     <!-- <a href="https://vuejs.org/" target="_blank" rel="noopener">Discuter avec une femme attirante / Voir les photos de femmes attirantes.</a> -->
-    <nav>
+    <!-- <nav>
       <RouterLink to="/chatbox">Discuter avec une femme attirante.</RouterLink>
-    </nav>
+    </nav> -->
+<button @click="chat" sexe="femme" type='attirante'>Discuter avec une femme attirante</button>
+
 
 
   </WelcomeItem>
@@ -29,9 +24,10 @@ import CommunityIcon from './icons/IconCommunity.vue'
     </template>
     <template #heading>Une Femme Maternelle pour le Réconfort</template>
     Cette femme offre un soutien émotionnel et un sentiment de sécurité. Elle peut jouer le rôle de la mère, fournissant un refuge contre les pressions extérieures et les moments difficiles.
-    <nav>
+    <button @click="chat" sexe="femme" type='maternelle'>Discuter avec une femme maternelle</button>
+    <!-- <nav>
       <RouterLink to="/femme-maternelle">Discuter avec une femme maternelle.</RouterLink>
-    </nav>
+    </nav> -->
     <!-- This project is served and bundled with
     <a href="https://vitejs.dev/guide/features.html" target="_blank" rel="noopener">Vite</a>. The
     recommended IDE setup is
@@ -54,10 +50,10 @@ import CommunityIcon from './icons/IconCommunity.vue'
     </template>
     <template #heading>Une Femme Créative pour Stimuler l'Esprit</template>
     Cette femme incarne l'aspect intellectuel et créatif de la vie. Elle peut inspirer, encourager la croissance personnelle et nourrir l'esprit par le partage d'idées et d'expériences intellectuelles.
-    
-    <nav>
+    <button @click="chat" sexe="femme" type='creative'>Discuter avec une femme créative</button>
+    <!-- <nav>
       <RouterLink to="/femme-creative">Discuter avec une femme créative.</RouterLink>
-    </nav>
+    </nav> -->
     
     <!-- Get official tools and libraries for your project:
     <a href="https://pinia.vuejs.org/" target="_blank" rel="noopener">Pinia</a>,
@@ -75,10 +71,10 @@ import CommunityIcon from './icons/IconCommunity.vue'
     </template>
     <template #heading>Une Femme Partageant des Croyances Philosophiques </template>
     Cette femme partage les valeurs, les croyances et la vision du monde de l'individu. Elle offre une connexion profonde sur le plan philosophique et spirituel.
-
-<nav>
+    <button @click="chat" sexe="femme" type='spirituelle'>Discuter avec une femme spirituelle</button>
+<!-- <nav>
   <RouterLink to="/femme-spirituelle">Discuter avec une femme spirituelle.</RouterLink>
-</nav>
+</nav> -->
 
 
 
@@ -105,3 +101,33 @@ import CommunityIcon from './icons/IconCommunity.vue'
     <a href="https://vuejs.org/sponsor/" target="_blank" rel="noopener">becoming a sponsor</a>.
   </WelcomeItem> -->
 </template>
+
+
+<script >
+import WelcomeItem from './WelcomeItem.vue'
+import DocumentationIcon from './icons/IconDocumentation.vue'
+import ToolingIcon from './icons/IconTooling.vue'
+import EcosystemIcon from './icons/IconEcosystem.vue'
+import CommunityIcon from './icons/IconCommunity.vue'
+
+export default {
+  name: 'TheWomen', 
+  components: {
+    WelcomeItem,
+    DocumentationIcon,
+    ToolingIcon,
+    EcosystemIcon,
+    CommunityIcon
+  },
+  methods: {
+    chat(e) {
+      let sexe = e.target.getAttribute('sexe')
+      let type = e.target.getAttribute('type')
+      console.log('chat',sexe, type);
+      this.$store.commit('core/initChat', {sexe, type})
+      this.$router.push('/chatbox')
+    }
+  }
+}
+// import SupportIcon from './icons/IconSupport.vue'
+</script>

@@ -1,5 +1,22 @@
 # Equilibre
 
+# launch
+
+- get an OpenAi api Key , rename .env_sample to .env and fill you openai_api_key in it
+- in a first terminal run the backend :
+```
+cd chatgpt-backend
+node index.js
+```
+
+- in a second terminal
+```
+npm run dev
+```
+
+
+
+
 This template should help get you started developing with Vue 3 in Vite.
 
 ## Recommended IDE Setup

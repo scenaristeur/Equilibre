@@ -1,32 +1,30 @@
 <template>
-    <div class="chatbox-container">
-<div class="container">
-  <h1>Ai Chat Bot</h1>
-<div class="messageBox mt-8">
-  <template v-for="(message, index) in messages" :key="index">
-    <div :class="message.from == 'user' ? 'messageFromUser' : 'messageFromChatGpt'">
-      <div :class="message.from == 'user' ? 'userMessageWrapper' : 'chatGptMessageWrapper'">
-        <div :class="message.from == 'user' ? 'userMessageContent' : 'chatGptMessageContent'">{{ message.data }}</div>
+  <div class="chatbox-container">
+    <div class="container">
+      <h1>{{sexe}} {{ type }} <RouterLink to="/">X</RouterLink></h1>
+      <!-- 
+      target {{ target }}
+      <hr>
+      prompt {{ system_prompt }} -->
+      <div class="messageBox mt-8">
+        <template v-for="(message, index) in messages" :key="index">
+          <div v-if="message.role != 'system'" :class="message.role == 'user' ? 'messageFromUser' : 'messageFromChatGpt'">
+            <div :class="message.role == 'user' ? 'userMessageWrapper' : 'chatGptMessageWrapper'">
+              <div :class="message.role == 'user' ? 'userMessageContent' : 'chatGptMessageContent'">{{ message.content }}
+              </div>
+            </div>
+          </div>
+        </template>
+      </div>
+      <div class="inputContainer">
+        <input v-on:keyup.enter="sendMessage(currentMessage)" v-model="currentMessage" type="text" class="messageInput"
+          placeholder="Demande-moi ce que tu veux..." />
+        <button @click="sendMessage(currentMessage)" class="askButton">
+          Envoyer
+        </button>
       </div>
     </div>
-  </template>
-</div>
-<div class="inputContainer">
-  <input
-    v-model="currentMessage"
-    type="text"
-    class="messageInput"
-    placeholder="Ask me anything..."
-  />
-  <button
-    @click="sendMessage(currentMessage)"
-    class="askButton"
-  >
-    Ask
-  </button>
-</div>
-</div>
-</div>
+  </div>
 </template>
 <script>
 import axios from 'axios';
@@ -39,26 +37,73 @@ export default {
       messages: [],
     };
   },
+  created() {
+    this.initMessages()
+  },
   methods: {
     async sendMessage(message) {
       this.messages.push({
-        from: 'user',
-        data: message,
+        role: 'user',
+        content: message,
       });
       await axios
         .post('http://localhost:3000/chatbot', {
-          message: message,
+          messages: this.messages
         })
-       .then((response) => {
-        console.log('response', response)
-  this.messages.push({
-    from: 'chatGpt',
-    data: response.data.data, // Access the 'data' property of the response object
-  });
-});
+        .then((response) => {
+          console.log('response', response)
+          this.messages.push({
+            role: 'assistant',
+            content: response.data, // Access the 'data' property of the response object
+          });
+          console.log(this.messages)
+        });
+      this.currentMessage = ''
+    },
+    initMessages() {
+      if (this.system_prompt == undefined) {
+        this.$router.push('/')
+      } else {
+        this.messages = [{ role: 'system', content: this.system_prompt }, 
+      {role: 'assistant', content:'Bonjour...'}]
+        console.log(this.messages)
+      }
+    }
+  },
+  watch: {
+    sexe() {
+      console.log(this.sexe)
 
     },
   },
+  // watch:{
+  // system_prompt(){
+  //   console.log('target', this.system_prompt)
+  //   this.initMessages()
+
+  //     // messages: [
+  //     //   { role: 'system', content: req.body.system_prompt },
+  //     //   { role: 'user', content: req.body.message }
+  //     // ],
+  // }
+  // },
+
+  computed: {
+    target() {
+      return this.$store.state.core.target
+    },
+    sexe() {
+      return this.$store.state.core.sexe
+    },
+    type() {
+      return this.$store.state.core.type
+    },
+    system_prompt() {
+      return this.$store.state.core.system_prompt
+    },
+  }
+
+
 };
 </script>
 
@@ -75,7 +120,7 @@ export default {
 
 .container {
   width: 360px;
-  height: 600px;
+  height: 95vh; /*700px;*/
   background-color: white;
   border-radius: 8px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
@@ -107,12 +152,13 @@ h1 {
 
 .messageFromUser,
 .messageFromChatGpt {
-  display: flex; }
+  display: flex;
+}
 
 
 
 .messageBox {
-  max-height: 400px;
+  /*max-height: 400px;*/
   overflow-y: auto;
   padding: 0 16px;
   border-top: 1px solid #f0f0f0;
@@ -134,6 +180,8 @@ h1 {
 
 .userMessageWrapper {
   align-self: flex-end;
+  width: 100%;
+  text-align: right;
 }
 
 .chatGptMessageWrapper {
@@ -142,7 +190,7 @@ h1 {
 
 .userMessageContent,
 .chatGptMessageContent {
-  max-width: 60%;
+  /* max-width: 60%;*/
   padding: 8px 12px;
   border-radius: 18px;
   margin-bottom: 2px;
@@ -150,13 +198,14 @@ h1 {
   line-height: 1.4;
 }
 
-.userMessageContent {
+.chatGptMessageContent {
   background-color: #1877F2;
   color: white;
   border-top-left-radius: 0;
 }
 
-.chatGptMessageContent {
+
+  .userMessageContent {
   background-color: #EDEDED;
   color: #222;
   border-top-right-radius: 0;
@@ -218,6 +267,7 @@ h1 {
     border-radius: 0;
   }
 }
+
 .chatbox-container {
   position: fixed;
   bottom: 24px;

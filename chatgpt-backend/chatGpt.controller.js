@@ -1,4 +1,4 @@
-import OpenAI from 'openai';
+import OpenAI from 'openai'
 import 'dotenv/config'
 
 export const askToChatGpt = async function (req, res) {
@@ -7,37 +7,48 @@ export const askToChatGpt = async function (req, res) {
    */
   const openai = new OpenAI({
     // eslint-disable-next-line no-undef
-    apiKey: process.env['OPENAI_API_KEY'], // This is the default and can be omitted
-  });
+    apiKey: process.env['OPENAI_API_KEY'] // This is the default and can be omitted
+  })
 
   /**
    * 2. Let's talk to chatGPT
    */
 
+
+console.log(req.body.messages)
+
+
+
   const chatCompletion = await openai.chat.completions.create({
-    messages: [{ role: 'user', content: req.body.message }],
-    model: 'gpt-3.5-turbo',
-  });
+    // messages: [
+    //   { role: 'system', content: req.body.system_prompt },
+    //   { role: 'user', content: req.body.message }
+    // ],
+    messages: req.body.messages,
+    model: 'gpt-3.5-turbo'
+  })
   console.log(chatCompletion)
   console.log(chatCompletion.choices[0].message)
-// res.send(chatCompletion.choices[0].message);
-      res.send({ from: "chatGpt", data: chatCompletion.choices[0].message });
-//   await openAIInstance
-//     .createCompletion({
-//       model: "text-davinci-003",
-//       prompt: req.body.message,
-//       temperature: 0,
-//       max_tokens: 500,
-//     })
-//     .then((response) => {
-//       const repliedMessage = response.data.choices[0].text;
-//       res.send({ from: "chatGpt", data: repliedMessage });
-//     })
-//     .catch((error) => {
-//       // Report error
-//       console.log("Error ", error);
-//     });
-};
+   res.send(chatCompletion.choices[0].message.content);
+  //res.send({ role: 'assistant', data: chatCompletion.choices[0].message })
 
 
 
+
+  
+  //   await openAIInstance
+  //     .createCompletion({
+  //       model: "text-davinci-003",
+  //       prompt: req.body.message,
+  //       temperature: 0,
+  //       max_tokens: 500,
+  //     })
+  //     .then((response) => {
+  //       const repliedMessage = response.data.choices[0].text;
+  //       res.send({ from: "chatGpt", data: repliedMessage });
+  //     })
+  //     .catch((error) => {
+  //       // Report error
+  //       console.log("Error ", error);
+  //     });
+}
