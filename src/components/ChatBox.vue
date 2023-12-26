@@ -35,9 +35,9 @@ export default {
     return {
       currentMessage: '',
       messages: [],
-     // server_url: 'http://localhost:5678/v1/chat/completions',
+      //server_url: 'http://localhost:5678/v1/chat/completions2', // using scenaristeur/openai2horde
       //server_url: 'https://api.openai.com/v1/chat/completions',
-      server_url: 'http://localhost:3000/chatbot'
+      server_url: 'http://localhost:3001/chatbot' // using chatgpt-backend of this project
     };
   },
   created() {

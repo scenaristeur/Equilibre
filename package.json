@@ -4,7 +4,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "server": "cd chatgpt-backend && node index.js",
+    "client": "vite",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
     "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
@@ -12,6 +14,8 @@
   },
   "dependencies": {
     "axios": "^1.6.2",
+"concurrently": "^8.2.2",
+    "open": "^9.1.0",
     "vite-plugin-pwa": "^0.17.4",
     "vue": "^3.3.11",
     "vue-router": "^4.2.5",
