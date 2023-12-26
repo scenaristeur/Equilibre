@@ -53,6 +53,16 @@ npm run lint
 
 - chat ui https://www.youtube.com/watch?v=MPK5Y2GDKD8
 
+*
+# node-llama-cpp
+for this two work, you need a llm model in gguf format like dolphin-2.2.1-mistral-7b.Q4_0.gguf in chatgpt-backend/models  according to https://withcatai.github.io/node-llama-cpp/guide/.
+
+you can use https://huggingface.co/TheBloke/dolphin-2.2.1-mistral-7B-GGUF/blob/main/dolphin-2.2.1-mistral-7b.Q4_0.gguf at https://huggingface.co/TheBloke/dolphin-2.2.1-mistral-7B-GGUF/tree/main
+
+
+
+# positionner un point sur un cercle
+https://enseignement.leomartin.net/ucp/2019-2020/lptsi/after-effects-expressions/cours-5/2-cercle.html
 
 ```
 

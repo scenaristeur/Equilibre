@@ -8,6 +8,7 @@ pnpm-debug.log*
 lerna-debug.log*
 .env
 hot.md
+chatgpt-backend/models/*
 
 node_modules
 .DS_Store
