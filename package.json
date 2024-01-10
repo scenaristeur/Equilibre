@@ -15,12 +15,15 @@
   "dependencies": {
     "axios": "^1.6.2",
     "concurrently": "^8.2.2",
+    "instantsearch.js": "^4.63.0",
     "langchain": "^0.0.212",
     "node-llama-cpp": "^2.8.3",
     "open": "^9.1.0",
+    "typesense-instantsearch-adapter": "^2.7.1",
     "uuid": "^9.0.1",
     "vite-plugin-pwa": "^0.17.4",
     "vue": "^3.3.11",
+    "vue-instantsearch": "^4.13.2",
     "vue-router": "^4.2.5",
     "vuex": "^4.0.2"
   },

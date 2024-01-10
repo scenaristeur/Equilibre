@@ -30,6 +30,11 @@ const router = createRouter({
     name: 'match',
     component: () => import('@/views/EmbedGraph.vue')
   },
+  {
+    path: '/search',
+    name: 'search',
+    component: () => import('@/views/TypesenseSearch.vue')
+  },
     {
       path: '/about',
       name: 'about',
