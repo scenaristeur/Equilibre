@@ -1,7 +1,8 @@
 <template>
   <div class="chatbox-container">
     <div class="container">
-      <h1>{{sexe}} {{ type }} <RouterLink to="/">X</RouterLink></h1>
+      <h1>{{ sexe }} {{ type }} <RouterLink to="/">X</RouterLink>
+      </h1>
       <!-- 
       target {{ target }}
       <hr>
@@ -49,6 +50,23 @@ export default {
         role: 'user',
         content: message,
       });
+      // this.messages+=`USER:${message}\n`
+      // this.messages+=`ASSISTANT:`
+      this.currentMessage = ''
+      let response = await this.$store.state.core.HordeClient.send({ messages: this.messages })
+      console.log("HORDECLIENT RESPONSE", response)
+      this.messages.push({
+        role: 'assistant',
+        content: response.text, // Access the 'data' property of the response object
+      });
+
+
+    },
+    async sendMessageOpenAi(message) {
+      this.messages.push({
+        role: 'user',
+        content: message,
+      });
       await axios
         .post(this.server_url, {
           messages: this.messages
@@ -67,9 +85,15 @@ export default {
       if (this.system_prompt == undefined) {
         this.$router.push('/')
       } else {
-        this.messages = [{ role: 'system', content: this.system_prompt }, 
-      {role: 'assistant', content:'Bonjour...'}]
+        this.messages = [{ role: 'system', content: this.system_prompt },
+        { role: 'assistant', content: 'Bonjour.' }
+        ]
         console.log(this.messages)
+
+        // this.messages = `SYSTEM:${this.system_prompt}\n`
+        // this.messages+=`ASSISTANT:Bonjour, demande-moi ce que tu veux...`
+
+
       }
     }
   },
@@ -123,7 +147,8 @@ export default {
 
 .container {
   width: 360px;
-  height: 95vh; /*700px;*/
+  height: 95vh;
+  /*700px;*/
   background-color: white;
   border-radius: 8px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
@@ -208,7 +233,7 @@ h1 {
 }
 
 
-  .userMessageContent {
+.userMessageContent {
   background-color: #EDEDED;
   color: #222;
   border-top-right-radius: 0;

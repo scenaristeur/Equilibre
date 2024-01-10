@@ -1,6 +1,8 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+import HelloWorld from '@/components/HelloWorld.vue'
+import HordeVue from '@/views/HordeVue.vue'
+import HordeApi from '@/components/HordeApi.vue'
 // import ContactView from './views/ContactView.vue'
 </script>
 
@@ -16,11 +18,12 @@ import HelloWorld from './components/HelloWorld.vue'
         <RouterLink to="/about">A propos</RouterLink>
         <RouterLink to="/match">Match</RouterLink>
       </nav>
-   
+   <HordeApi />
     </div>
   </header>
 
   <RouterView />
+  <HordeVue />
   <!-- <ContactView /> -->
 </template>
 

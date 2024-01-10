@@ -59,7 +59,7 @@ for this two work, you need a llm model in gguf format like dolphin-2.2.1-mistra
 
 you can use https://huggingface.co/TheBloke/dolphin-2.2.1-mistral-7B-GGUF/blob/main/dolphin-2.2.1-mistral-7b.Q4_0.gguf at https://huggingface.co/TheBloke/dolphin-2.2.1-mistral-7B-GGUF/tree/main
 
-
+ http://localhost:5173/match
 
 # positionner un point sur un cercle
 https://enseignement.leomartin.net/ucp/2019-2020/lptsi/after-effects-expressions/cours-5/2-cercle.html
