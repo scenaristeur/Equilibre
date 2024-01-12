@@ -1,6 +1,29 @@
 
 
 <template>
+
+  <WelcomeItem>
+    <template #icon>
+      <CommunityIcon />
+    </template>
+    <template #heading>Une Femme Partageant des Croyances Philosophiques </template>
+    Cette femme partage les valeurs, les croyances et la vision du monde de l'individu. Elle offre une connexion profonde
+    sur le plan philosophique et spirituel.
+    <button @click="chat" sexe="femme" type='spirituelle'>Discuter avec une femme spirituelle</button>
+  </WelcomeItem>
+
+  <WelcomeItem>
+    <template #icon>
+      <EcosystemIcon />
+    </template>
+    <template #heading>Une Femme Créative pour Stimuler l'Esprit</template>
+    Cette femme incarne l'aspect intellectuel et créatif de la vie. Elle peut inspirer, encourager la croissance
+    personnelle et nourrir l'esprit par le partage d'idées et d'expériences intellectuelles.
+    <button @click="chat" sexe="femme" type='creative'>Discuter avec une femme créative</button>
+  </WelcomeItem>
+
+
+
   <WelcomeItem>
     <template #icon>
       <ToolingIcon />
@@ -20,27 +43,6 @@
     Elle peut satisfaire les besoins de désir et de passion, offrant une connexion charnelle qui est importante pour de
     nombreuses personnes.
     <button @click="chat" sexe="femme" type='attirante'>Discuter avec une femme attirante</button>
-  </WelcomeItem>
-
-
-  <WelcomeItem>
-    <template #icon>
-      <EcosystemIcon />
-    </template>
-    <template #heading>Une Femme Créative pour Stimuler l'Esprit</template>
-    Cette femme incarne l'aspect intellectuel et créatif de la vie. Elle peut inspirer, encourager la croissance
-    personnelle et nourrir l'esprit par le partage d'idées et d'expériences intellectuelles.
-    <button @click="chat" sexe="femme" type='creative'>Discuter avec une femme créative</button>
-  </WelcomeItem>
-
-  <WelcomeItem>
-    <template #icon>
-      <CommunityIcon />
-    </template>
-    <template #heading>Une Femme Partageant des Croyances Philosophiques </template>
-    Cette femme partage les valeurs, les croyances et la vision du monde de l'individu. Elle offre une connexion profonde
-    sur le plan philosophique et spirituel.
-    <button @click="chat" sexe="femme" type='spirituelle'>Discuter avec une femme spirituelle</button>
   </WelcomeItem>
 </template>
 

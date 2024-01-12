@@ -16,7 +16,7 @@ import HordeApi from '@/components/HordeApi.vue'
       <nav>
         <RouterLink to="/">Accueil</RouterLink>
         <RouterLink to="/about">A propos</RouterLink>
-        <RouterLink to="/match">Match</RouterLink>
+        <!-- <RouterLink to="/match">Match</RouterLink> -->
       </nav>
    <HordeApi />
     </div>

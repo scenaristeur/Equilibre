@@ -19,7 +19,7 @@
         <div ref="scrollTarget"
           style="height: 40px;margin-top:40px;margin-bottom:40px;background-color:rgb(204, 248, 226)">
           <span v-if="state != undefined && state.wait_time + state.queue_position > 0">
-            {{ "position: " + state.queue_position + " / délai:" + state.wait_time + "s" }}
+            {{ "position: " + state.queue_position + " / délai: " + state.wait_time + "s" }}
           </span>
 
         </div>
