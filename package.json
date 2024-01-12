@@ -13,12 +13,12 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
-    "@scenaristeur/horde-vue": "^1.0.0",
     "axios": "^1.6.2",
     "concurrently": "^8.2.2",
     "langchain": "^0.0.212",
     "node-llama-cpp": "^2.8.3",
     "open": "^9.1.0",
+    "smooth-scroll-into-view-if-needed": "^2.0.2",
     "uuid": "^9.0.1",
     "vite-plugin-pwa": "^0.17.4",
     "vue": "^3.3.11",

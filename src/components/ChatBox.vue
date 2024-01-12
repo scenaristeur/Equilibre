@@ -7,7 +7,7 @@
       target {{ target }}
       <hr>
       prompt {{ system_prompt }} -->
-      <div class="messageBox mt-8">
+      <div ref="messageBox" class="messageBox mt-8">
         <template v-for="(message, index) in messages" :key="index">
           <div v-if="message.role != 'system'" :class="message.role == 'user' ? 'messageFromUser' : 'messageFromChatGpt'">
             <div :class="message.role == 'user' ? 'userMessageWrapper' : 'chatGptMessageWrapper'">
@@ -16,19 +16,29 @@
             </div>
           </div>
         </template>
+        <div ref="scrollTarget"
+          style="height: 40px;margin-top:40px;margin-bottom:40px;background-color:rgb(204, 248, 226)">
+          <span v-if="state != undefined && state.wait_time + state.queue_position > 0">
+            {{ "position: " + state.queue_position + " / délai:" + state.wait_time + "s" }}
+          </span>
+
+        </div>
       </div>
       <div class="inputContainer">
         <input v-on:keyup.enter="sendMessage(currentMessage)" v-model="currentMessage" type="text" class="messageInput"
-          placeholder="Demande-moi ce que tu veux..." />
+          placeholder="Demande-moi ce que tu veux..." autofocus />
         <button @click="sendMessage(currentMessage)" class="askButton">
           Envoyer
         </button>
       </div>
+
     </div>
+
   </div>
 </template>
 <script>
 import axios from 'axios';
+import scrollIntoView from 'smooth-scroll-into-view-if-needed';
 
 export default {
   name: 'ChatBox',
@@ -50,6 +60,7 @@ export default {
         role: 'user',
         content: message,
       });
+      this.scroll()
       // this.messages+=`USER:${message}\n`
       // this.messages+=`ASSISTANT:`
       this.currentMessage = ''
@@ -60,7 +71,16 @@ export default {
         content: response.text, // Access the 'data' property of the response object
       });
 
+      this.scroll()
 
+    },
+    scroll() {
+      let scrollTarget = this.$refs.scrollTarget
+      // console.log(scrollTarget)
+      scrollIntoView(scrollTarget, {
+        behavior: 'auto',
+        scrollMode: 'always',
+      });
     },
     async sendMessageOpenAi(message) {
       this.messages.push({
@@ -102,6 +122,10 @@ export default {
       console.log(this.sexe)
 
     },
+    state(){
+      console.log(this.state)
+      this.scroll()
+    }
   },
   // watch:{
   // system_prompt(){
@@ -128,6 +152,9 @@ export default {
     system_prompt() {
       return this.$store.state.core.system_prompt
     },
+    state() {
+      return this.$store.state.core.HordeClient.state
+    }
   }
 
 
@@ -169,6 +196,7 @@ h1 {
   border-bottom: 1px solid #e7e7e7;
 }
 
+/*
 .messageBox {
   padding: 16px;
   flex-grow: 1;
@@ -176,7 +204,7 @@ h1 {
   display: flex;
   flex-direction: column;
   gap: 12px;
-}
+} */
 
 .messageFromUser,
 .messageFromChatGpt {
@@ -187,7 +215,8 @@ h1 {
 
 .messageBox {
   /*max-height: 400px;*/
-  overflow-y: auto;
+  height: 500px;
+  overflow-y: scroll;
   padding: 0 16px;
   border-top: 1px solid #f0f0f0;
   border-bottom: 1px solid #f0f0f0;

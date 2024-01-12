@@ -14,6 +14,8 @@ node index.js
 npm run dev
 ```
 
+# horde 
+npm link @scenaristeur/horde-vue
 
 
 

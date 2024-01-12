@@ -9,7 +9,11 @@ import { v4 as uuidv4 } from 'uuid'
 import {HordeClient} from '@scenaristeur/horde-vue'
 
 const state = () => ({
-  HordeClient: new HordeClient({api_key: localStorage.getItem('hordeApi') ,temperature: 0.1}),
+  HordeClient: new HordeClient(
+    {api_key: localStorage.getItem('hordeApi') || '0000000000',
+    temperature: 0.1,
+     max_length:100,
+      max_context_length :1024 }),
   lang: 'fr',
   sexe: null,
   type: null,
