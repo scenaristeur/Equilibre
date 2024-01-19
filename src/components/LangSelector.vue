@@ -1,6 +1,5 @@
 <template>
-    lang:
-    <!-- <h1>{{ $t('title.config') }}</h1> -->
+     <!-- <h1>{{ $t('title.config') }}</h1> -->
     <select class="App-language" v-model="locale">
       <option
         v-for="optionLocale in supportLocales"

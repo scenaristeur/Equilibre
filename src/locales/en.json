@@ -1,17 +1,21 @@
 {
-  "languages": {
-    "pt": "Portuguese",
-    "en": "English",
-    "es": "Spanish",
-    "fr": "French"
-  },
   "title": {
-    "config": "Configuration",
     "equilibre": "Equilibrium",
     "home": "Home",
     "about": "About",
-    "A Man": "A Man",
-    "A Woman": "A Woman",
-    "wouldLikeToTalkTo": "I Would you like to talk to"
+    "A_Man": "A Man",
+    "A_Woman": "A Woman",
+    "wouldLikeToTalkTo": "I Would you like to talk to ",
+    "Dans": "In",
+    "confession_barjo": "Confessions of a Crap Artist",
+    "wikipedia_link_barjo": "https://en.wikipedia.org/wiki/Confessions_of_a_Crap_Artist",
+    "isidore": ", by Philip K. Dick, the main character, Jack Isidore, talks about his need four types of women to be balanced:",
+    "attirante": "an attractive woman for sexuality",
+    "maternelle": "a motherly woman for comfort,",
+    "creative": "a creative woman to stimulate his mind,",
+    "spirituelle": "and a woman who shares his philosophical beliefs.",
+    "idee": "This idea illustrates the complexities and contradictions of human psychology that are often explored in the works of Philip K. Dick.",
+    "appli_equi": "The Equilibre application allows you to chat with the profile of a person who matches your current state of mind.",
+    "whoYouWantToTalk": "Who would you like to chat with?"
   }
 }

@@ -12,31 +12,21 @@ import EcosystemIcon from './icons/IconEcosystem.vue'
     <template #icon>
       <DocumentationIcon />
     </template>
-    <template #heading>Confessions d'un Barjo</template>
+    <template #heading>{{ $t('title.confession_barjo') }}</template>
 
-    Dans
-    <a
-      href="https://fr.wikipedia.org/wiki/Confessions_d%27un_barjo"
-      target="_blank"
-      >"Confessions d'un Barjo"</a
-    >, de Philip K.Dick, le personnage principal, Jack Isidore, évoque son
-    besoin de quatre types de femmes pour être équilibré :
+    {{ $t('title.Dans') }}
+    <a :href="$t('title.wikipedia_link_barjo')" target="_blank">{{ $t('title.confession_barjo') }}</a> {{
+      $t('title.isidore') }}
     <ul>
-      <li>une femme attirante pour le sexe,</li>
-      <li>une femme maternelle pour le réconfort,</li>
-      <li>une femme créative pour stimuler son esprit,</li>
-      <li>et une femme qui partage ses croyances philosophiques.</li>
-    </ul> 
-   <p>
-    Cette idée illustre les complexités et les contradictions de la psychologie
-    humaine qui sont souvent explorées dans les œuvres de Philip K. Dick. 
-   </p> 
+      <li>{{ $t('title.attirante') }}</li>
+      <li>{{ $t('title.maternelle') }}</li>
+      <li>{{ $t('title.creative') }}</li>
+      <li>{{ $t('title.spirituelle') }}</li>
+    </ul>
+    <p>
+      {{ $t('title.idee') }}
+    </p>
 
-
-<!-- 
-    Vue’s
-    <a href="https://vuejs.org/" target="_blank" rel="noopener">official documentation</a>
-    provides you with all information you need to get started. -->
   </WelcomeItem>
 
 
@@ -44,54 +34,22 @@ import EcosystemIcon from './icons/IconEcosystem.vue'
     <template #icon>
       <ToolingIcon />
     </template>
-    <template #heading>Equilibre</template>
-    L'application Equilibre vous permet de discuter avec le profil de personne qui correspond à votre état d'edprit du moment.
-    <!-- This project is served and bundled with
-    <a href="https://vitejs.dev/guide/features.html" target="_blank" rel="noopener">Vite</a>. The
-    recommended IDE setup is
-    <a href="https://code.visualstudio.com/" target="_blank" rel="noopener">VSCode</a> +
-    <a href="https://github.com/johnsoncodehk/volar" target="_blank" rel="noopener">Volar</a>. If
-    you need to test your components and web pages, check out
-    <a href="https://www.cypress.io/" target="_blank" rel="noopener">Cypress</a> and
-    <a href="https://on.cypress.io/component" target="_blank" rel="noopener"
-      >Cypress Component Testing</a
-    >.
+    <template #heading>{{ $t('title.equilibre') }}</template>
+    {{ $t('title.appli_equi') }}
 
-    <br />
-
-    More instructions are available in <code>README.md</code>. -->
   </WelcomeItem>
 
   <WelcomeItem>
     <template #icon>
       <EcosystemIcon />
     </template>
-    <template #heading>Avec qui souhaiteriez-vous discuter ?</template>
-J'aimerais discuter avec 
+    <template #heading></template>
+    {{$t('title.wouldLikeToTalkTo')}}
 
-<nav>
-  <RouterLink to="/femme">Une Femme</RouterLink>
-  <RouterLink to="/homme">Un Homme</RouterLink>
-</nav>
+    <nav>
+      <RouterLink to="/femme">{{ $t('title.A_Woman') }}</RouterLink>
+      <RouterLink to="/homme">{{ $t('title.A_Man') }}</RouterLink>
+    </nav>
 
-<!-- This project is served and bundled with
-    <a href="https://vitejs.dev/guide/features.html" target="_blank" rel="noopener">Vite</a>. The
-    recommended IDE setup is
-    <a href="https://code.visualstudio.com/" target="_blank" rel="noopener">VSCode</a> +
-    <a href="https://github.com/johnsoncodehk/volar" target="_blank" rel="noopener">Volar</a>. If
-    you need to test your components and web pages, check out
-    <a href="https://www.cypress.io/" target="_blank" rel="noopener">Cypress</a> and
-    <a href="https://on.cypress.io/component" target="_blank" rel="noopener"
-      >Cypress Component Testing</a
-    >.
-
-    <br />
-
-    More instructions are available in <code>README.md</code>. -->
   </WelcomeItem>
-
-
-
-
-
 </template>

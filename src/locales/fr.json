@@ -3,8 +3,19 @@
     "equilibre": "Equilibre",
     "home": "Accueil",
     "about": "A propos",
-    "A Man": "Un homme",
-    "A Woman": "Une femme",
-    "wouldLikeToTalkTo":"J'aimerais discuter avec "
+    "A_Man": "Un homme",
+    "A_Woman": "Une femme",
+    "wouldLikeToTalkTo": "J'aimerais discuter avec ",
+    "Dans": "Dans",
+    "confession_barjo": "Confession d'un Barjo",
+    "wikipedia_link_barjo": "https://fr.wikipedia.org/wiki/Confessions_d%27un_barjo",
+    "isidore": ", de Philip K.Dick, le personnage principal, Jack Isidore, évoque son besoin de quatre types de femmes pour être équilibré :",
+    "attirante": "une femme attirante pour le sexe,",
+    "maternelle": "une femme maternelle pour le réconfort,",
+    "creative": "une femme créative pour stimuler son esprit,",
+    "spirituelle": "et une femme qui partage ses croyances philosophiques.",
+    "idee": "Cette idée illustre les complexités et les contradictions de la psychologie humaine qui sont souvent explorées dans les œuvres de Philip K. Dick.",
+    "appli_equi": "L'application Equilibre vous permet de discuter avec le profil de personne qui correspond à votre état d'edprit du moment.",
+    "whoYouWantToTalk": "Avec qui souhaiteriez-vous discuter ?"
   }
 }
