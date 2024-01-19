@@ -22,8 +22,6 @@
     <button @click="chat" sexe="femme" type='creative'>Discuter avec une femme créative</button>
   </WelcomeItem>
 
-
-
   <WelcomeItem>
     <template #icon>
       <ToolingIcon />

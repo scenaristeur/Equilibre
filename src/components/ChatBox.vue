@@ -26,9 +26,9 @@
       </div>
       <div class="inputContainer">
         <input v-on:keyup.enter="sendMessage(currentMessage)" v-model="currentMessage" type="text" class="messageInput"
-          placeholder="Demande-moi ce que tu veux..." autofocus />
+          :placeholder="$t('chatbox.placeholder')" autofocus />
         <button @click="sendMessage(currentMessage)" class="askButton">
-          Envoyer
+          {{$t('chatbox.send')}}
         </button>
       </div>
 

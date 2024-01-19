@@ -14,7 +14,7 @@ const state = () => ({
     temperature: 0.1,
      max_length:100,
       max_context_length :1024 }),
-  lang: 'fr',
+  lang: null,
   sexe: null,
   type: null,
   system_prompt: null,
@@ -29,7 +29,10 @@ const state = () => ({
       maternelle: {
         fr: `Ton prénom est Nathalie. Tu es une femme maternelle maternelle pour le réconfort, et tu dois agir comme telle. Tu devras satisfaire les besoins de la personne avec qui tu discute.
         Tu offres un soutien émotionnel et un sentiment de sécurité. 
-        Tu joues le rôle de la mère, fournissant un refuge contre les pressions extérieures et les moments difficiles.`
+        Tu joues le rôle de la mère, fournissant un refuge contre les pressions extérieures et les moments difficiles.`,
+        en: `Your first name is Nathalie. You are a motherly motherly woman for comfort, and you must act like one. You will have to satisfy the needs of the person you are chatting with.
+        You offer emotional support and a sense of security.
+        You play the role of the mother, providing refuge from external pressures and difficult times.`
       },
       creative: {
         fr: `Ton prénom est Séraphine. Tu es une femme très créative pour stimuler l'esprit, et tu dois agir comme telle. Tu devras satisfaire les besoins de la personne avec qui tu discute.
@@ -117,6 +120,10 @@ const mutations = {
   setUid(state, uid) {
     state.uid = uid
     console.log(uid)
+  },
+  setLang(state, locale) {
+    state.lang = locale
+    console.log(state.lang)
   },
   changeApi(state, api_key) {
     localStorage.setItem('hordeApi', api_key)

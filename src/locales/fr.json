@@ -28,5 +28,9 @@
     "explanation1": "pour obtenir une clé API Horde, en cliquant sur ",
     "this_link": "ce lien d'enregistrement",
     "explanation2": "qui vous permettra d'être prioritaire et de générer le texte et les images plus rapidement. Pour l'API, il n'est pas nécessaire de se connecter sur l'un des providers indiqués.Vous avez juste à indiquer un nom d'utilisateur (Display Name) et à noter le code qui sera généré dans le bandeau orange, copiez-le. Garder ce code dans un coin et insérez le dans le champ de saisie `clé d'API` de la page "
-  }
+  },
+  "chatbox": {  
+    "placeholder":"Demande-moi ce que tu veux...",
+    "send": "Envoyer"
+}
 }

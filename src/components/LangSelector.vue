@@ -21,11 +21,13 @@ import { SUPPORT_LOCALES as supportLocales, setI18nLanguage } from '@/i18n';
         },
         created() {
             this.supportLocales = supportLocales
+            this.$store.commit('core/setLang', this.locale)
 
         },
         watch: {
             locale() {
                 setI18nLanguage(this.locale)
+                this.$store.commit('core/setLang', this.locale)
             }
         }
     }
