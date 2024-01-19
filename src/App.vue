@@ -3,6 +3,7 @@ import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from '@/components/HelloWorld.vue'
 import HordeVue from '@/views/HordeVue.vue'
 import HordeApi from '@/components/HordeApi.vue'
+import LangSelector from '@/components/LangSelector.vue';
 // import ContactView from './views/ContactView.vue'
 </script>
 
@@ -11,14 +12,18 @@ import HordeApi from '@/components/HordeApi.vue'
     <!-- <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" /> -->
 
     <div class="wrapper">
-      <HelloWorld msg="Equilibre" />
+
+      <HelloWorld :msg="$t('title.equilibre')" />
 
       <nav>
-        <RouterLink to="/">Accueil</RouterLink>
-        <RouterLink to="/about">A propos</RouterLink>
+
+        <RouterLink to="/">{{ $t('title.home') }}</RouterLink>
+        <RouterLink to="/about">{{ $t('title.about') }}</RouterLink>
         <!-- <RouterLink to="/match">Match</RouterLink> -->
+        <LangSelector />
+
       </nav>
-   <HordeApi />
+      <HordeApi />
     </div>
   </header>
 

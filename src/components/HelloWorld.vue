@@ -11,10 +11,10 @@ defineProps({
   <div class="greetings">
     <h1 class="green">{{ msg }}</h1>
     <h3>
-      J'aimerais discuter avec 
+      {{$t('wouldLikeToTalkTo')}}
       <nav>
-        <RouterLink to="/homme">Un Homme</RouterLink>
-        <RouterLink to="/femme">Une Femme</RouterLink>
+        <RouterLink to="/homme">{{ $t('A Man') }}</RouterLink>
+        <RouterLink to="/femme">{{ $t('A Woman') }}</RouterLink>
 
       </nav>
       <!-- <a href="https://vitejs.dev/" target="_blank" rel="noopener">Vite</a> +

@@ -1,0 +1,17 @@
+{
+  "languages": {
+    "pt": "Portuguese",
+    "en": "English",
+    "es": "Spanish",
+    "fr": "French"
+  },
+  "title": {
+    "config": "Configuration",
+    "equilibre": "Equilibrium",
+    "home": "Home",
+    "about": "About",
+    "A Man": "A Man",
+    "A Woman": "A Woman",
+    "wouldLikeToTalkTo": "I Would you like to talk to"
+  }
+}
