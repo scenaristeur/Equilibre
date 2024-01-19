@@ -17,5 +17,16 @@
     "idee": "Cette idée illustre les complexités et les contradictions de la psychologie humaine qui sont souvent explorées dans les œuvres de Philip K. Dick.",
     "appli_equi": "L'application Equilibre vous permet de discuter avec le profil de personne qui correspond à votre état d'edprit du moment.",
     "whoYouWantToTalk": "Avec qui souhaiteriez-vous discuter ?"
+  },
+  "horde_api": {
+    "keyPlaceholder": "Entrez votre clé d'api horde",
+    "getKey": "obtenir votre clé d'api personnelle de la horde",
+    "accelerate": "pour accélérer la génération de texte et d'image, et l'enregistrez la dans votre navigateur",
+    "keyActive": "Votre clé d'api Horde est active.",
+    "keyInit": "Reinitialiser ma clé API horde",
+    "more_horde_info": "plus d'infos sur le fonctionnement de la horde",
+    "explanation1": "pour obtenir une clé API Horde, en cliquant sur ",
+    "this_link": "ce lien d'enregistrement",
+    "explanation2": "qui vous permettra d'être prioritaire et de générer le texte et les images plus rapidement. Pour l'API, il n'est pas nécessaire de se connecter sur l'un des providers indiqués.Vous avez juste à indiquer un nom d'utilisateur (Display Name) et à noter le code qui sera généré dans le bandeau orange, copiez-le. Garder ce code dans un coin et insérez le dans le champ de saisie `clé d'API` de la page "
   }
 }

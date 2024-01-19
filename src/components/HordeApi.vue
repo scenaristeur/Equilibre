@@ -1,23 +1,21 @@
 <template>
     <div>
         <div v-if="HordeClient.api_key == '0000000000'">
-            <a href="https://stablehorde.net/register" class="btn btn-success" target="_blank">obtenir votre clé d'api personnelle de la horde</a> 
+            <a href="https://stablehorde.net/register" class="btn btn-success" target="_blank">{{ $t('horde_api.getKey') }}</a> 
            
                 
                 <RouterLink to="/about"><IconQuestionIcon /></RouterLink>
  
             <br>
-            pour accélérer la génération de texte et d'image,
-            et l'enregistrez la dans votre navigateur 
-            <input id="api_input" placeholder="clé d'Api" v-model="newHordeApi" autocomplete="off"
+            {{ $t('horde_api.accelerate') }} 
+            <input id="api_input" :placeholder="$t('horde_api.keyPlaceholder')" v-model="newHordeApi" autocomplete="off"
                 @change="changeApi" />
             <!-- type="password" -->
 
         </div>
         <div v-else>
-            Votre clé d'api Horde est active. 
-            <button class="btn btn-secondary btn-sm" @click="reinitApi">Reinitialiser ma clé API
-                horde</button>
+            {{ $t('horde_api.keyActive') }} 
+            <button class="btn btn-secondary btn-sm" @click="reinitApi">{{ $t('horde_api.keyInit') }} </button>
         </div>
 
     </div>

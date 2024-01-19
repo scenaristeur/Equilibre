@@ -17,5 +17,16 @@
     "idee": "This idea illustrates the complexities and contradictions of human psychology that are often explored in the works of Philip K. Dick.",
     "appli_equi": "The Equilibre application allows you to chat with the profile of a person who matches your current state of mind.",
     "whoYouWantToTalk": "Who would you like to chat with?"
+  },
+  "horde_api": {
+    "keyPlaceholder": "Enter your API key",
+    "getKey": "get your personal api key from horde",
+    "accelerate": "to speed up the generation of text and images, and save it in your browser",
+    "keyActive": "Your Horde API key is active.",
+    "keyInit": "Reset my horde API key",
+    "more_horde_info": "more info on how the horde works",
+    "explanation1": "to obtain a Horde API key, by clicking on ",
+    "this_link": "this register link",
+    "explanation2": "which will allow you to be prioritized and generate text and images faster. For the API, it is not necessary to connect to one of the indicated providers. You just have to indicate a user name (Display Name) and note the code which will be generated in the orange banner, copy it. Keep this code in a corner and insert it into the `API key` input field on the page "
   }
 }
