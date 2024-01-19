@@ -18,6 +18,10 @@ npm run dev
 npm link @scenaristeur/horde-vue
 
 
+# hommes
+- belle plume, doux, taquin, original, aventureux
+
+
 
 This template should help get you started developing with Vue 3 in Vite.
 
