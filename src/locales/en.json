@@ -29,8 +29,15 @@
     "this_link": "this register link",
     "explanation2": "which will allow you to be prioritized and generate text and images faster. For the API, it is not necessary to connect to one of the indicated providers. You just have to indicate a user name (Display Name) and note the code which will be generated in the orange banner, copy it. Keep this code in a corner and insert it into the `API key` input field on the page "
   },
-  "chatbox": {  
-    "placeholder":"Ask me anything you want...",
+  "chatbox": {
+    "placeholder": "Ask me anything you want...",
     "send": "Send"
-}
+  },
+  "woman": {
+    "spirituelle": {
+      "titre": "A Woman Sharing Philosophical Beliefs",
+      "description": "This woman shares the values, beliefs, and worldview of the individual. She offers a deep connection on the philosophical and spiritual plane.",
+      "action": "Chat with a woman with philosophical beliefs"
+    }
+  }
 }

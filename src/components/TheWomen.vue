@@ -6,10 +6,10 @@
     <template #icon>
       <CommunityIcon />
     </template>
-    <template #heading>Une Femme Partageant des Croyances Philosophiques </template>
-    Cette femme partage les valeurs, les croyances et la vision du monde de l'individu. Elle offre une connexion profonde
-    sur le plan philosophique et spirituel.
-    <button @click="chat" sexe="femme" type='spirituelle'>Discuter avec une femme spirituelle</button>
+    <template #heading>
+      {{ $t('woman.spirituelle.titre') }}</template>
+      {{ $t('woman.spirituelle.description') }}
+    <button @click="chat" sexe="femme" type='spirituelle'>{{ $t('woman.spirituelle.action') }}</button>
   </WelcomeItem>
 
   <WelcomeItem>

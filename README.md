@@ -21,7 +21,12 @@ npm link @scenaristeur/horde-vue
 # hommes
 - belle plume, doux, taquin, original, aventureux
 
+# supabase
+- https://www.youtube.com/watch?v=8DTOTT7q0XA&t=5s
+- https://supabase.com/docs/guides/database/overview
 
+# todo
+look at llm storage https://www.youtube.com/watch?v=GOjuuw8AvBc
 
 This template should help get you started developing with Vue 3 in Vite.
 
