@@ -106,7 +106,7 @@ export default {
         this.$router.push('/')
       } else {
         this.messages = [{ role: 'system', content: this.system_prompt },
-        { role: 'assistant', content: 'Bonjour.' }
+        { role: 'assistant', content: this.$t('chatbox.bonjour') }
         ]
         console.log(this.messages)
 

@@ -1,5 +1,3 @@
-
-
 <template>
 
   <WelcomeItem>
@@ -7,45 +5,52 @@
       <CommunityIcon />
     </template>
     <template #heading>
-      {{ $t('woman.spirituelle.titre') }}</template>
-      {{ $t('woman.spirituelle.description') }}
-    <button @click="chat" sexe="femme" type='spirituelle'>{{ $t('woman.spirituelle.action') }}</button>
+      {{ $t('woman.spirituelle.titre') }}
+      <button @click="chat" sexe="femme" type='spirituelle'>{{ $t('woman.spirituelle.action') }}</button>
+    </template>
+    {{ $t('woman.spirituelle.description') }}
+
   </WelcomeItem>
 
   <WelcomeItem>
     <template #icon>
       <EcosystemIcon />
     </template>
-    <template #heading>Une Femme Créative pour Stimuler l'Esprit</template>
-    Cette femme incarne l'aspect intellectuel et créatif de la vie. Elle peut inspirer, encourager la croissance
-    personnelle et nourrir l'esprit par le partage d'idées et d'expériences intellectuelles.
-    <button @click="chat" sexe="femme" type='creative'>Discuter avec une femme créative</button>
+    <template #heading>
+      {{ $t('woman.creative.titre') }}
+      <button @click="chat" sexe="femme" type='creative'>{{ $t('woman.creative.action') }}</button>
+    </template>
+    {{ $t('woman.creative.description') }}
+
   </WelcomeItem>
 
   <WelcomeItem>
     <template #icon>
       <ToolingIcon />
     </template>
-    <template #heading>Une Femme Maternelle pour le Réconfort</template>
-    Cette femme offre un soutien émotionnel et un sentiment de sécurité. Elle peut jouer le rôle de la mère, fournissant
-    un refuge contre les pressions extérieures et les moments difficiles.
-    <button @click="chat" sexe="femme" type='maternelle'>Discuter avec une femme maternelle</button>
+    <template #heading>
+      {{ $t('woman.maternelle.titre') }}
+      <button @click="chat" sexe="femme" type='maternelle'>{{ $t('woman.maternelle.action') }}</button>
+    </template>
+    {{ $t('woman.maternelle.description') }}
+
   </WelcomeItem>
 
   <WelcomeItem>
     <template #icon>
       <DocumentationIcon />
     </template>
-    <template #heading>Une Femme Attirante pour le Sexe</template>
-    Cette femme représente la dimension physique et sexuelle de la vie.
-    Elle peut satisfaire les besoins de désir et de passion, offrant une connexion charnelle qui est importante pour de
-    nombreuses personnes.
-    <button @click="chat" sexe="femme" type='attirante'>Discuter avec une femme attirante</button>
+    <template #heading>
+      {{ $t('woman.attirante.titre') }}
+      <button @click="chat" sexe="femme" type='attirante'>{{ $t('woman.attirante.action') }}</button>
+    </template>
+    {{ $t('woman.attirante.description') }}
+
   </WelcomeItem>
 </template>
 
 
-<script >
+<script>
 import WelcomeItem from './WelcomeItem.vue'
 import DocumentationIcon from './icons/IconDocumentation.vue'
 import ToolingIcon from './icons/IconTooling.vue'

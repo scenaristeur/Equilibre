@@ -31,13 +31,29 @@
   },
   "chatbox": {
     "placeholder": "Ask me anything you want...",
-    "send": "Send"
+    "send": "Send",
+    "bonjour": "Hello"
   },
   "woman": {
     "spirituelle": {
       "titre": "A Woman Sharing Philosophical Beliefs",
       "description": "This woman shares the values, beliefs, and worldview of the individual. She offers a deep connection on the philosophical and spiritual plane.",
       "action": "Chat with a woman with philosophical beliefs"
+    },
+    "creative": {
+      "titre": "A Creative Woman to Inspire and Grow",
+      "description": "This woman represents the intellectual and creative aspect of life. She can inspire, encourage personal growth, and nourish the mind by sharing ideas and intellectual experiences.",
+      "action": "Chat with a creative woman"
+    },
+    "maternelle": {
+      "titre": "A Nurturing and Maternal Woman for Comfort",
+      "description": "This woman offers emotional support and a sense of security. She can play the role of a mother, providing a refuge against external pressures and difficult moments.",
+      "action": "Chat with a nurturing and maternal woman"
+    },
+    "attirante": {
+      "titre": "An Attractive Woman for Sex",
+      "description": "This woman represents the physical and sexual dimension of life. She can satisfy the needs of desire and passion, providing a carnal connection that is important to many people.",
+      "action": "Chat with an attractive woman"
     }
   }
 }

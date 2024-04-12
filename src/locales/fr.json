@@ -31,13 +31,56 @@
   },
   "chatbox": {
     "placeholder": "Demande-moi ce que tu veux...",
-    "send": "Envoyer"
+    "send": "Envoyer",
+    "bonjour": "Bonjour"
   },
   "woman": {
     "spirituelle": {
-      "titre": "Une Femme Partageant des Croyances Philosophiques",
-      "description": "Cette femme partage les valeurs, les croyances et la vision du monde de l'individu. Elle offre une connexion profonde sur le plan philosophique et spirituel.",
-      "action": "Discuter avec une femme spirituelle"
+      "titre": "Graziella est spirituelle",
+      "description": "Graziella partage ses valeurs, ses croyances et sa vision du monde. Elle offre une connexion profonde sur le plan philosophique et spirituel.",
+      "action": "Discuter avec Graziella"
+    },
+    "creative": {
+      "titre": "Séraphine est créative",
+      "description": "Séraphine incarne l'aspect intellectuel et créatif de la vie. Elle inspire, encourage la croissance personnelle et nourrit l'esprit par le partage d'idées et d'expériences intellectuelles.",
+      "action": "Discuter avec Séraphine"
+    },
+    "maternelle": {
+      "titre": "Nathalie est maternelle",
+      "description": "Nathalie offre un soutien émotionnel et un sentiment de sécurité. Elle peut jouer le rôle de la mère, fournissant un refuge contre les pressions extérieures et les moments difficiles.",
+      "action": "Discuter avec Nathalie"
+    },
+    "attirante": {
+      "titre": "Emma est attirante et aime séduire",
+      "description": "Emma représente la dimension physique et sexuelle de la vie. Elle peut satisfaire les besoins de désir et de passion, offrant une connexion charnelle.",
+      "action": "Discuter avec Emma"
+    }
+  },
+  "man": {
+    "ecouteur": {
+      "titre": "Jonathan est un écouteur empathique",
+      "description": "Jonathan incarne une empathie sincère et une écoute attentive, offrant un soutien inconditionnel. Il apporte une stabilité émotionnelle rassurante, créant un environnement propice à l'épanouissement.",
+      "action": "Discuter avec Jonathan"
+    },
+    "drole": {
+      "titre": "Marco est drôle et doté de légèreté",
+      "description": "Marco illumine chaque journée avec son humour contagieux, faisant rire même dans les moments difficiles. Il invite à l'aventure, créant des expériences mémorables et repoussant les limites du quotidien.",
+      "action": "Discuter avec Marco"
+    },
+    "fiable": {
+      "titre": "Alex est respectueux et fiable",
+      "description": "Alex incarne la bienveillance, établissant des relations basées sur le respect mutuel et une communication transparente. Son engagement altruiste suscite une admiration, montrant un côté attentionné et impliqué dans la société.",
+      "action": "Discuter avec Alex"
+    },
+    "creatif": {
+      "titre": "Nicolas est créatif et intellectuel",
+      "description": "Nicolas, avec son intellect stimulant, partage une passion pour des discussions profondes et une croissance intellectuelle constante. Ambitieux et motivé dans ses aspirations personnelles et professionnelles, il exprime une créativité fluide, apportant une touche artistique à chaque aspect de la vie.",
+      "action": "Discuter avec Nicolas"
+    },
+    "irresistible": {
+      "titre": "Une Femme Attirante pour le sexe",
+      "description": "Cette femme représente la dimension physique et sexuelle de la vie. Elle peut satisfaire les besoins de désir et de passion, offrant une connexion charnelle qui est importante pour de nombreuses personnes.",
+      "action": "Discuter avec une femme attirante"
     }
   }
 }
