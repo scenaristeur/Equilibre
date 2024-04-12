@@ -34,7 +34,7 @@
     "send": "Envoyer",
     "bonjour": "Bonjour"
   },
-  "woman": {
+  "femme": {
     "spirituelle": {
       "titre": "Graziella est spirituelle",
       "description": "Graziella partage ses valeurs, ses croyances et sa vision du monde. Elle offre une connexion profonde sur le plan philosophique et spirituel.",
@@ -56,7 +56,7 @@
       "action": "Discuter avec Emma"
     }
   },
-  "man": {
+  "homme": {
     "ecouteur": {
       "titre": "Jonathan est un écouteur empathique",
       "description": "Jonathan incarne une empathie sincère et une écoute attentive, offrant un soutien inconditionnel. Il apporte une stabilité émotionnelle rassurante, créant un environnement propice à l'épanouissement.",
@@ -78,9 +78,9 @@
       "action": "Discuter avec Nicolas"
     },
     "irresistible": {
-      "titre": "Une Femme Attirante pour le sexe",
-      "description": "Cette femme représente la dimension physique et sexuelle de la vie. Elle peut satisfaire les besoins de désir et de passion, offrant une connexion charnelle qui est importante pour de nombreuses personnes.",
-      "action": "Discuter avec une femme attirante"
+      "titre": "Gabriel est irrésistible et attirant",
+      "description": "Gabriel possède un charisme magnétique qui attire instantanément l'attention, captivant tous ceux qui croisent son regard. Il incarne l'attirance puissante, ajoutant un élément de séduction irrésistible. Il est une bête de sexe, maîtrisant l'art de l'intimité pour créer des expériences sensuelles inoubliables.",
+      "action": "Discuter avec Gabriel"
     }
   }
 }

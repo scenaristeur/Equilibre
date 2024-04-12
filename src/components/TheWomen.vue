@@ -5,10 +5,10 @@
       <CommunityIcon />
     </template>
     <template #heading>
-      {{ $t('woman.spirituelle.titre') }}
-      <button @click="chat" sexe="femme" type='spirituelle'>{{ $t('woman.spirituelle.action') }}</button>
+      {{ $t('femme.spirituelle.titre') }}
+      <button @click="chat" sexe="femme" type='spirituelle'>{{ $t('femme.spirituelle.action') }}</button>
     </template>
-    {{ $t('woman.spirituelle.description') }}
+    {{ $t('femme.spirituelle.description') }}
 
   </WelcomeItem>
 
@@ -17,10 +17,10 @@
       <EcosystemIcon />
     </template>
     <template #heading>
-      {{ $t('woman.creative.titre') }}
-      <button @click="chat" sexe="femme" type='creative'>{{ $t('woman.creative.action') }}</button>
+      {{ $t('femme.creative.titre') }}
+      <button @click="chat" sexe="femme" type='creative'>{{ $t('femme.creative.action') }}</button>
     </template>
-    {{ $t('woman.creative.description') }}
+    {{ $t('femme.creative.description') }}
 
   </WelcomeItem>
 
@@ -29,10 +29,10 @@
       <ToolingIcon />
     </template>
     <template #heading>
-      {{ $t('woman.maternelle.titre') }}
-      <button @click="chat" sexe="femme" type='maternelle'>{{ $t('woman.maternelle.action') }}</button>
+      {{ $t('femme.maternelle.titre') }}
+      <button @click="chat" sexe="femme" type='maternelle'>{{ $t('femme.maternelle.action') }}</button>
     </template>
-    {{ $t('woman.maternelle.description') }}
+    {{ $t('femme.maternelle.description') }}
 
   </WelcomeItem>
 
@@ -41,10 +41,10 @@
       <DocumentationIcon />
     </template>
     <template #heading>
-      {{ $t('woman.attirante.titre') }}
-      <button @click="chat" sexe="femme" type='attirante'>{{ $t('woman.attirante.action') }}</button>
+      {{ $t('femme.attirante.titre') }}
+      <button @click="chat" sexe="femme" type='attirante'>{{ $t('femme.attirante.action') }}</button>
     </template>
-    {{ $t('woman.attirante.description') }}
+    {{ $t('femme.attirante.description') }}
 
   </WelcomeItem>
 </template>

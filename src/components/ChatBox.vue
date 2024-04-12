@@ -1,7 +1,10 @@
 <template>
   <div class="chatbox-container">
     <div class="container">
-      <h1>{{ sexe }} {{ type }} <RouterLink to="/">X</RouterLink>
+      <h1>
+        <!-- <RouterLink @click="$router.go(-1)">X</RouterLink> -->
+        <button @click="$router.back()" style="font-size: 30px">&lt;</button>
+        {{ titre}}
       </h1>
       <!-- 
       target {{ target }}
@@ -44,6 +47,7 @@ export default {
   name: 'ChatBox',
   data() {
     return {
+      // titre:'',
       currentMessage: '',
       messages: [],
       //server_url: 'http://localhost:5678/v1/chat/completions2', // using scenaristeur/openai2horde
@@ -108,7 +112,10 @@ export default {
         this.messages = [{ role: 'system', content: this.system_prompt },
         { role: 'assistant', content: this.$t('chatbox.bonjour') }
         ]
-        console.log(this.messages)
+
+        // let titre = this.sexe+"."+this.type+".titre"
+        console.log( this.messages)
+        // this.titre = this.$t(titre) //(""+titre) 
 
         // this.messages = `SYSTEM:${this.system_prompt}\n`
         // this.messages+=`ASSISTANT:Bonjour, demande-moi ce que tu veux...`
@@ -154,6 +161,14 @@ export default {
     },
     state() {
       return this.$store.state.core.HordeClient.state
+    },
+    titre(){
+      // let titre = this.sexe+"."+this.type+".titre"
+      //   console.log(titre, this.messages)
+      // let titre = this.sexe+"."+this.type+".titre"
+      // console.log(typeof(titre))
+      // console.log(this.$t(this.sexe+"."+this.type+".titre") )
+        return this.$t(this.sexe+"."+this.type+".titre") 
     }
   }
 

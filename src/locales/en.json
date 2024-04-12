@@ -3,9 +3,9 @@
     "equilibre": "Equilibrium",
     "home": "Home",
     "about": "About",
-    "A_Man": "A Man",
-    "A_Woman": "A Woman",
-    "wouldLikeToTalkTo": "I Would you like to talk to ",
+    "A_Man": "A man",
+    "A_Woman": "A woman",
+    "wouldLikeToTalkTo": "I would you like to talk to ",
     "Dans": "In",
     "confession_barjo": "Confessions of a Crap Artist",
     "wikipedia_link_barjo": "https://en.wikipedia.org/wiki/Confessions_of_a_Crap_Artist",
@@ -34,26 +34,53 @@
     "send": "Send",
     "bonjour": "Hello"
   },
-  "woman": {
+  "femme": {
     "spirituelle": {
-      "titre": "A Woman Sharing Philosophical Beliefs",
-      "description": "This woman shares the values, beliefs, and worldview of the individual. She offers a deep connection on the philosophical and spiritual plane.",
-      "action": "Chat with a woman with philosophical beliefs"
+      "titre": "Graziella is spiritual",
+      "description": "Graziella shares her values, beliefs and worldview. She offers a deep connection on the philosophical and spiritual level.",
+      "action": "Chat with Graziella"
     },
     "creative": {
-      "titre": "A Creative Woman to Inspire and Grow",
-      "description": "This woman represents the intellectual and creative aspect of life. She can inspire, encourage personal growth, and nourish the mind by sharing ideas and intellectual experiences.",
-      "action": "Chat with a creative woman"
+      "titre": "Séraphine is creative",
+      "description": "Séraphine embodies the intellectual and creative aspects of life. She inspires, encourages personal growth and nourishes the mind through sharing ideas and experiences.",
+      "action": "Chat with Séraphine"
     },
     "maternelle": {
-      "titre": "A Nurturing and Maternal Woman for Comfort",
-      "description": "This woman offers emotional support and a sense of security. She can play the role of a mother, providing a refuge against external pressures and difficult moments.",
-      "action": "Chat with a nurturing and maternal woman"
+      "titre": "Nathalie is a maternal woman",
+      "description": "Nathalie offers emotional support and a sense of security. She can play the role of a mother, providing a refuge against external pressures and difficult moments.",
+      "action": "Chat with Nathalie"
     },
     "attirante": {
-      "titre": "An Attractive Woman for Sex",
-      "description": "This woman represents the physical and sexual dimension of life. She can satisfy the needs of desire and passion, providing a carnal connection that is important to many people.",
-      "action": "Chat with an attractive woman"
+      "titre": "Emma is attractive and seductive",
+      "description": "Emma represents the physical and sexual aspects of life. She can satisfy sexual desires and passion, offering a connection on the sensual level.",
+      "action": "Chat with Emma"
+    }
+  },
+  "homme": {
+    "ecouteur": {
+      "titre": "Jonathan is an empathic listener",
+      "description": "Jonathan embodies sincere empathy and attentive listening, offering unconditional support. He provides emotional stability and creates an environment conducive to personal growth.",
+      "action": "Chat with Jonathan"
+    },
+    "drole": {
+      "titre": "Marco is funny and light-hearted",
+      "description": "Marco brings joy to every day with his contagious humor, even in difficult situations. He invites adventure, creating memorable experiences and pushing boundaries beyond the mundane.",
+      "action": "Chat with Marco"
+    },
+    "fiable": {
+      "titre": "Alex is respectful and dependable",
+      "description": "Alex embodies kindness, establishing relationships based on mutual respect and transparent communication. His altruistic spirit inspires admiration, showing a committed and involved member of society.",
+      "action": "Chat with Alex"
+    },
+    "creatif": {
+      "titre": "Nicolas is creative and intellectually stimulating",
+      "description": "Nicolas, with his intellectually stimulating conversations, shares a passion for deep discussions and an insatiable desire for personal and intellectual growth. Ambitious and motivated in both personal and professional aspirations, he expresses a fluid creativity, bringing an artistic touch to every aspect of life.",
+      "action": "Chat with Nicolas"
+    },
+    "irresistible": {
+      "titre": "Gabriel is irresistible and charming",
+      "description": "Gabriel has a magnetic charm that captures the attention of everyone he meets. He incarnaes the powerful attraction, adding an irresistible element to his personality. He is a master of intimacy, creating experiences that are both sensual and memorable.",
+      "action": "Chat with Gabriel"
     }
   }
 }

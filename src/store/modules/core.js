@@ -40,12 +40,14 @@ const state = () => ({
 const mutations = {
   initChat(state, options) {
     state.target = options
-    state.target.system_prompt =
+    let system_prompt =
       state.system_prompts[state.target.sexe][state.target.type][state.lang]
+      + state.system_prompts['engagement'][state.lang]
     console.log(state.target)
     state.sexe = options.sexe
     state.type = options.type
-    state.system_prompt = state.system_prompts[state.sexe][state.type][state.lang]
+    state.target.system_prompt = system_prompt
+    state.system_prompt = system_prompt
   },
   setResponse(state, r) {
     state.response = r
