@@ -29,7 +29,7 @@ import LangSelector from '@/components/LangSelector.vue';
 
   <RouterView />
   <HordeVue />
-  1.0.2 - engagement
+  1.0.3 - stop_sequence
   <!-- <ContactView /> -->
 </template>
 

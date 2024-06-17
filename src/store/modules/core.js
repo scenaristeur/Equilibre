@@ -6,17 +6,21 @@
 // import { HordeClient } from '@/api/horde_client.js'
 import axios from 'axios'
 import { v4 as uuidv4 } from 'uuid'
-import {HordeClient} from '@scenaristeur/horde-vue'
+import { HordeClient } from '@scenaristeur/horde-vue'
 import system_prompts from '@/prompts/system_prompts'
 
-console.log("system_prompts", system_prompts)
+console.log('system_prompts', system_prompts)
 
 const state = () => ({
-  HordeClient: new HordeClient(
-    {api_key: localStorage.getItem('hordeApi') || '0000000000',
+  HordeClient: new HordeClient({
+    api_key: localStorage.getItem('hordeApi') || '0000000000',
     temperature: 0.1,
-     max_length:100,
-      max_context_length :1024 }),
+    max_length: 100,
+    max_context_length: 1024,
+    "stop_sequence": [
+      "string"
+    ],
+  }),
   lang: null,
   sexe: null,
   type: null,
@@ -24,7 +28,7 @@ const state = () => ({
   target: { sexe: null, type: null },
   system_prompts: system_prompts,
   uid: undefined,
- response:null,
+  response: null,
   server_url: 'http://localhost:3001'
 
   //   showMenu: false,
@@ -41,8 +45,8 @@ const mutations = {
   initChat(state, options) {
     state.target = options
     let system_prompt =
-      state.system_prompts[state.target.sexe][state.target.type][state.lang]
-      + state.system_prompts['engagement'][state.lang]
+      state.system_prompts[state.target.sexe][state.target.type][state.lang] +
+      state.system_prompts['engagement'][state.lang]
     console.log(state.target)
     state.sexe = options.sexe
     state.type = options.type
@@ -115,7 +119,7 @@ const actions = {
     }
 
     await axios
-      .post(context.state.server_url+"/embedAndSim", {
+      .post(context.state.server_url + '/embedAndSim', {
         query
       })
       .then((response) => {
