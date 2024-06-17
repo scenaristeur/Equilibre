@@ -4,7 +4,7 @@
       <h1>
         <!-- <RouterLink @click="$router.go(-1)">X</RouterLink> -->
         <button @click="$router.back()" style="font-size: 30px">&lt;</button>
-        {{ titre}}
+        {{ titre }}
       </h1>
       <!-- 
       target {{ target }}
@@ -12,127 +12,150 @@
       prompt {{ system_prompt }} -->
       <div ref="messageBox" class="messageBox mt-8">
         <template v-for="(message, index) in messages" :key="index">
-          <div v-if="message.role != 'system'" :class="message.role == 'user' ? 'messageFromUser' : 'messageFromChatGpt'">
-            <div :class="message.role == 'user' ? 'userMessageWrapper' : 'chatGptMessageWrapper'">
-              <div :class="message.role == 'user' ? 'userMessageContent' : 'chatGptMessageContent'">{{ message.content }}
+          <div
+            v-if="message.role != 'system'"
+            :class="message.role == 'user' ? 'messageFromUser' : 'messageFromChatGpt'"
+          >
+            <div
+              :class="
+                message.role == 'user' ? 'userMessageWrapper' : 'chatGptMessageWrapper'
+              "
+            >
+              <div
+                :class="
+                  message.role == 'user' ? 'userMessageContent' : 'chatGptMessageContent'
+                "
+              >
+                {{ message.content }}
               </div>
             </div>
           </div>
         </template>
-        <div ref="scrollTarget"
-          style="height: 40px;margin-top:40px;margin-bottom:40px;background-color:rgb(204, 248, 226)">
+        <div
+          ref="scrollTarget"
+          style="
+            height: 40px;
+            margin-top: 40px;
+            margin-bottom: 40px;
+            background-color: rgb(204, 248, 226);
+          "
+        >
           <span v-if="state != undefined && state.wait_time + state.queue_position > 0">
-            {{ "position: " + state.queue_position + " / délai: " + state.wait_time + "s" }}
+            {{
+              "position: " + state.queue_position + " / délai: " + state.wait_time + "s"
+            }}
           </span>
-
         </div>
       </div>
       <div class="inputContainer">
-        <input v-on:keyup.enter="sendMessage(currentMessage)" v-model="currentMessage" type="text" class="messageInput"
-          :placeholder="$t('chatbox.placeholder')" autofocus />
+        <input
+          v-on:keyup.enter="sendMessage(currentMessage)"
+          v-model="currentMessage"
+          type="text"
+          class="messageInput"
+          :placeholder="$t('chatbox.placeholder')"
+          autofocus
+        />
         <button @click="sendMessage(currentMessage)" class="askButton">
-          {{$t('chatbox.send')}}
+          {{ $t("chatbox.send") }}
         </button>
       </div>
-
     </div>
-
   </div>
 </template>
 <script>
-import axios from 'axios';
-import scrollIntoView from 'smooth-scroll-into-view-if-needed';
+import axios from "axios";
+import scrollIntoView from "smooth-scroll-into-view-if-needed";
 
 export default {
-  name: 'ChatBox',
+  name: "ChatBox",
   data() {
     return {
       // titre:'',
-      currentMessage: '',
+      currentMessage: "",
       messages: [],
       //server_url: 'http://localhost:5678/v1/chat/completions2', // using scenaristeur/openai2horde
       //server_url: 'https://api.openai.com/v1/chat/completions',
-      server_url: 'http://localhost:3001/chatbot' // using chatgpt-backend of this project
+      server_url: "http://localhost:3001/chatbot", // using chatgpt-backend of this project
     };
   },
   created() {
-    this.initMessages()
+    this.initMessages();
   },
   methods: {
     async sendMessage(message) {
       this.messages.push({
-        role: 'user',
+        role: "user",
         content: message,
       });
-      this.scroll()
+      this.scroll();
       // this.messages+=`USER:${message}\n`
       // this.messages+=`ASSISTANT:`
-      this.currentMessage = ''
-      let response = await this.$store.state.core.HordeClient.send({ messages: this.messages })
-      console.log("HORDECLIENT RESPONSE", response)
+      this.currentMessage = "";
+      let response = await this.$store.state.core.HordeClient.send({
+        messages: this.messages,
+      });
+      console.log("HORDECLIENT RESPONSE", response);
       this.messages.push({
-        role: 'assistant',
+        role: "assistant",
         content: response.text, // Access the 'data' property of the response object
       });
 
-      this.scroll()
-
+      this.scroll();
     },
     scroll() {
-      let scrollTarget = this.$refs.scrollTarget
+      let scrollTarget = this.$refs.scrollTarget;
       // console.log(scrollTarget)
       scrollIntoView(scrollTarget, {
-        behavior: 'auto',
-        scrollMode: 'always',
+        behavior: "auto",
+        scrollMode: "always",
       });
     },
     async sendMessageOpenAi(message) {
       this.messages.push({
-        role: 'user',
+        role: "user",
         content: message,
       });
       await axios
         .post(this.server_url, {
-          messages: this.messages
+          messages: this.messages,
         })
         .then((response) => {
-          console.log('response', response)
+          console.log("response", response);
           this.messages.push({
-            role: 'assistant',
+            role: "assistant",
             content: response.data, // Access the 'data' property of the response object
           });
-          console.log(this.messages)
+          console.log(this.messages);
         });
-      this.currentMessage = ''
+      this.currentMessage = "";
     },
     initMessages() {
       if (this.system_prompt == undefined) {
-        this.$router.push('/')
+        this.$router.push("/");
       } else {
-        this.messages = [{ role: 'system', content: this.system_prompt },
-        { role: 'assistant', content: this.$t('chatbox.bonjour') }
-        ]
+        this.messages = [
+          { role: "system", content: this.system_prompt },
+          { role: "assistant", content: this.$t("chatbox.bonjour") },
+        ];
 
         // let titre = this.sexe+"."+this.type+".titre"
-        console.log( this.messages)
-        // this.titre = this.$t(titre) //(""+titre) 
+        console.log(this.messages);
+        // this.titre = this.$t(titre) //(""+titre)
 
         // this.messages = `SYSTEM:${this.system_prompt}\n`
         // this.messages+=`ASSISTANT:Bonjour, demande-moi ce que tu veux...`
-
-
       }
-    }
+    },
   },
   watch: {
     sexe() {
-      console.log(this.sexe)
-
+      console.log(this.sexe);
     },
-    state(){
-      console.log(this.state)
-      this.scroll()
-    }
+    state() {
+      console.log(this.state);
+      this.scroll();
+    },
   },
   // watch:{
   // system_prompt(){
@@ -148,42 +171,39 @@ export default {
 
   computed: {
     target() {
-      return this.$store.state.core.target
+      return this.$store.state.core.target;
     },
     sexe() {
-      return this.$store.state.core.sexe
+      return this.$store.state.core.sexe;
     },
     type() {
-      return this.$store.state.core.type
+      return this.$store.state.core.type;
     },
     system_prompt() {
-      return this.$store.state.core.system_prompt
+      return this.$store.state.core.system_prompt;
     },
     state() {
-      return this.$store.state.core.HordeClient.state
+      return this.$store.state.core.HordeClient.state;
     },
-    titre(){
+    titre() {
       // let titre = this.sexe+"."+this.type+".titre"
       //   console.log(titre, this.messages)
       // let titre = this.sexe+"."+this.type+".titre"
       // console.log(typeof(titre))
       // console.log(this.$t(this.sexe+"."+this.type+".titre") )
-        return this.$t(this.sexe+"."+this.type+".titre") 
-    }
-  }
-
-
+      return this.$t(this.sexe + "." + this.type + ".titre");
+    },
+  },
 };
 </script>
 
-
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
 
 .chatbox-container {
   position: fixed;
   bottom: 24px;
-  right: 24px;
+  right: 5px;
   z-index: 1000;
 }
 
@@ -197,7 +217,7 @@ export default {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 h1 {
@@ -225,8 +245,6 @@ h1 {
 .messageFromChatGpt {
   display: flex;
 }
-
-
 
 .messageBox {
   /*max-height: 400px;*/
@@ -271,14 +289,13 @@ h1 {
 }
 
 .chatGptMessageContent {
-  background-color: #1877F2;
+  background-color: #1877f2;
   color: white;
   border-top-left-radius: 0;
 }
 
-
 .userMessageContent {
-  background-color: #EDEDED;
+  background-color: #ededed;
   color: #222;
   border-top-right-radius: 0;
 }
@@ -317,7 +334,7 @@ h1 {
 }
 
 .askButton {
-  background-color: #1877F2;
+  background-color: #1877f2;
   color: white;
   font-size: 16px;
   padding: 8px 16px;
@@ -329,7 +346,7 @@ h1 {
 }
 
 .askButton:hover {
-  background-color: #145CB3;
+  background-color: #145cb3;
 }
 
 @media (max-width: 480px) {
@@ -346,7 +363,6 @@ h1 {
   right: 24px;
   z-index: 1000;
 }
-
 
 .messageBox {
   padding: 16px;
